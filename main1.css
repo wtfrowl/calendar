@@ -87,7 +87,7 @@ footer .madeBy{
 @media (max-width: 768px) {
     .left, .right{
      padding: 30px;
-    };
+    }
    .hdr{
      font-size: 8px;
    }

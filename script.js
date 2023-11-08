@@ -1,9 +1,7 @@
-            const date = document.getElementById("date");
-			const day = document.getElementById("day");
-			const month = document.getElementById("month");
-			const year = document.getElementById("year");
+            const day = document.getElementById("day");
+			const datemonthyear = document.getElementById("datemonthyear");
 			const time = document.getElementById("time");
-            const name = document.getElementById("name");
+            const name1 = document.getElementById("name");
 			const calendarInIndianLanguages = [
 				"पंचांग",   // Hindi
 				"காலண்டர்", // Tamil
@@ -66,10 +64,8 @@
 			function updateCal()
 			{
 				const today = new Date();
-				month.innerText = months[today.getMonth()]; 
+				datemonthyear.innerText = today.getDate() +" "+months[today.getMonth()] +" " + today.getFullYear(); 
 				day.innerText = days[today.getDay()];
-				date.innerText= today.getDate();
-				year.innerText= today.getFullYear();
 				time.innerHTML = today.getHours() +":" +today.getMinutes() +":" +today.getSeconds();
 			}
 
@@ -78,11 +74,28 @@
 			function updateName()
 			{
 				const random = Math.floor(Math.random() * calendarInIndianLanguages.length);
-				name.innerHTML=	calendarInIndianLanguages[random];
+				name1.innerHTML=	calendarInIndianLanguages[random];
 				
 			}
 			setInterval(updateName,2000);
 
+
+const left=document.querySelector('.left');
+
+function getRandomColor() {
+	var letters = "0123456789ABCDEF";
+	var color = "#";
+	for (var i = 0; i < 6; i++) {
+	  color += letters[Math.floor(Math.random() * 16)];
+	}
+	return color;
+  }
+ 
+function colorChanges(){
+	var randomColor = getRandomColor();
+	left.style.backgroundColor = randomColor;
+	
+}
 
 			
 			
